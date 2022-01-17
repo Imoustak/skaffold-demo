@@ -1,0 +1,14 @@
+apiVersion: skaffold/v2beta26
+kind: Config
+metadata:
+  name: skaffold-demo
+build:
+  artifacts:
+  - image: moustakis/skaffold-demo
+    docker:
+      dockerfile: Dockerfile
+deploy:
+  kubectl:
+    manifests:
+    - pod.yaml
+    - service.yaml
